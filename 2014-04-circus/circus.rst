@@ -39,6 +39,13 @@ What is it?
 
 ----
 
+What is it?
+===========
+
+.. image:: images/circus-architecture.png
+
+----
+
 Glossary
 ========
 
@@ -84,6 +91,21 @@ Similar Tools
 
 ----
 
+Similar Tools
+=============
+
+.. role:: strike
+    :class: strike
+
+* Upstart_
+* Supervisord_
+* :strike:`daemontools`
+
+.. _Upstart: http://upstart.ubuntu.com/
+.. _Supervisord: http://supervisord.org/
+
+----
+
 Comparison: Classical
 =====================
 
@@ -95,6 +117,38 @@ Comparison: Circus
 ==================
 
 .. image:: images/circus-stack.png
+
+----
+
+Supervisord
+===========
+
+Pros:
+
+* Mature, well-established codebase
+* Rich CLI
+* Flexible configuration
+
+Cons:
+
+* Stagnating development
+* Hard to track down bugs
+
+----
+
+Circus
+======
+
+Pros:
+
+* Accelerating development
+* Extensive deployments
+* More flexible integration
+
+Cons:
+
+* CLI not as flexible
+* Configuration lacks some features (grouping)
 
 ----
 
@@ -124,7 +178,7 @@ Simple Example
     [watcher:web]
     cmd = chaussette --fd $(circus.sockets.web) --backend meinheld server.app
     use_sockets = True
-    numprocesses = 
+    numprocesses = 3
     
     [socket:web]
     host = 0.0.0.0
@@ -161,7 +215,7 @@ How do I use it?
 * Circus controls:
  
  * ZMQ processing pipeline
- * SSH Tunnels
+ * SSH Tunnels (using ``keychain``)
  * Web workers
  * ElasticSearch
  * Memcached
@@ -199,7 +253,7 @@ Start at Boot (SSH)
         /path/to/circusd \
         --log-output /var/log/circus.log \
         --pidfile /var/circusd.pid \
-        ${circus-upstart:ini-file}
+        /path/to/buildout/etc/circus.ini
 
 ----
 
@@ -212,7 +266,7 @@ SSH Example
     [watcher:ssh_tunnel]
     cmd = /usr/bin/ssh
     args = -C -N -o ServerAliveInterval=30 -o ExitOnForwardFailure=yes
-           -i /path/to/privkey -L 6001:127.0.0.1:3306 user@my.ip
+           -i /path/to/privkey -L 6001:127.0.0.1:3306 user@my.ip.address
     singleton = True
     priority = 1
     copy_env = True

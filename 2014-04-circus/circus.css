@@ -10,6 +10,10 @@ body {
     width: 1000px;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 p {
     font-weight: normal;
     margin-bottom: 0.3em;
