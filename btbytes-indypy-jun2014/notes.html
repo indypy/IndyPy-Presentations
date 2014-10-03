@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="author" content="Pradeep Gowda pradeep@btbytes.com">
+  <title>iPython</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header>
+<h1 class="title">iPython</h1>
+<h2 class="author">Pradeep Gowda <script type="text/javascript">
+<!--
+h='&#98;&#116;&#98;&#x79;&#116;&#x65;&#x73;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#114;&#x61;&#100;&#x65;&#x65;&#112;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#112;&#114;&#x61;&#100;&#x65;&#x65;&#112;&#32;&#x61;&#116;&#32;&#98;&#116;&#98;&#x79;&#116;&#x65;&#x73;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></h2>
+<h3 class="date">Tuesday, June 10 2014</h3>
+</header>
+
+<h2 id="the-python-interpreter">The Python interpreter</h2>
+<ul>
+<li>Simple calculator</li>
+<li>Try out snippets of code</li>
+<li>Play with data files</li>
+<li><code>help(os)</code></li>
+<li><code>dir(os)</code></li>
+</ul>
+<h2 id="what-is-ipython">What is iPython</h2>
+<p>iPython = <code>interactive</code> python</p>
+<ul>
+<li>Interactive shell (duh!)</li>
+<li>tab completion</li>
+<li>object introspection</li>
+<li>better tracebacks</li>
+<li>syntax shortcuts</li>
+<li>autoindent</li>
+<li>history management</li>
+<li>output caching</li>
+<li>GUI support - Qt, (<code>%gui</code>)</li>
+<li>Browser based &quot;notebook&quot;</li>
+<li>data visualisation</li>
+<li>OS integration</li>
+<li><code>!echo &quot;hello shell&quot;</code></li>
+<li><code>foo = !dosomething.sh</code></li>
+<li>software development</li>
+<li><code>%run</code></li>
+<li><code>%timeit</code></li>
+<li><code>%debug</code></li>
+<li><code>%prun</code></li>
+<li><del>embeddable interpreters</del></li>
+<li><del>parallel computing</del></li>
+</ul>
+<p>~<a href="images/interactive.png">architecture</a></p>
+<p>In summary:</p>
+<pre><code>iPython = Python Shell + OS access + GUI + more
+          + Protocol (ZMQ)
+          + Notebook (Web) for collaboration
+          + Parallel computing</code></pre>
+<p>The goals of iPython are over-arching. But, you can benefit from iPython even if you don't have use for many of it's &quot;scientific computing/datascience&quot; aspects.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>mkvirtualenv indypy
+pip install ipython</code></pre>
+<p>If you want the notebook interface:</p>
+<pre><code>$install tornado #python async framework
+$install pyside #python bindings for Qt (F/OSS)
+$install pyzmq
+$install matplotlib #for pretty graphics</code></pre>
+<h2 id="now-for-something-completely-different-anaconda">Now for something completely different: anaconda</h2>
+<p>The easy, sane and complete option: use <strong>anaconda</strong> distribution by <code>continuum.io</code>.</p>
+<pre><code>http://docs.continuum.io/anaconda/</code></pre>
+<blockquote>
+<p>Anaconda is a free collection of powerful packages for Python that enables large-scale data management, analysis, and visualization for Business Intelligence, Scientific Analysis, Engineering, Machine Learning, and more.</p>
+</blockquote>
+<p>Use the <code>conda</code> tool for managing environments and packages.</p>
+<figure>
+<img src="images/conda-conda.png" alt="conda update" /><figcaption>conda update</figcaption>
+</figure>
+<p>Remember: You don't need to use the <code>anaconda</code> distribution if all you want is the <code>iPython</code> REPL.</p>
+<h2 id="demo">Demo</h2>
+<p>Object details: <code>?</code></p>
+<pre><code>import os
+os?
+
+Type:       module
+String Form:&lt;module &#39;os&#39; from &#39;/Users/pradeep/anaconda/python.app/Contents/lib/python2.7/os.pyc&#39;&gt;
+File:       /Users/pradeep/anaconda/python.app/Contents/lib/python2.7/os.py
+Docstring:
+OS routines for Mac, NT, or Posix depending on what system we&#39;re on.
+
+This exports:
+- all functions from posix, nt, os2, or ce, e.g. unlink, stat, etc.
+- os.path is one of the modules posixpath, or ntpath
+...
+...</code></pre>
+<p>More information: <code>??</code></p>
+<pre><code>os??</code></pre>
+<h3 id="logging-your-session-logstart">Logging your session: <code>%logstart</code></h3>
+<p>How to use it tho?</p>
+<pre><code>%logstart?</code></pre>
+<p>From the shell:</p>
+<pre><code>ipython -i session_log.py</code></pre>
+<h3 id="magic-commands">Magic commands: <code>%</code></h3>
+<p>Commands starting with <code>%</code> are called magic commands.</p>
+<pre><code>%pastebin hello.py</code></pre>
+<p>Commands starting with <code>%</code> are called magic commands. You can define your own. You can define your own custom magic commands.</p>
+<h3 id="history">History</h3>
+<pre><code># all of history
+%history
+
+# only a few
+%history 5-9
+
+#specific
+%history 5 9
+
+# save them to a file
+%save test1.py 5-9
+
+#access the history objects
+In?
+Out?
+
+_
+__
+
+print In[1]
+Out</code></pre>
+<h2 id="load-python-code-load">Load python code: <code>%load</code></h2>
+<pre><code>%load fact.py</code></pre>
+<h2 id="timeit-timeit">Timeit: %timeit</h2>
+<pre><code>%timeit factorial(10)</code></pre>
+<h3 id="run-python-code-run-hello">Run python code: <code>run hello</code></h3>
+<pre><code>run hello
+..error...</code></pre>
+<h3 id="osshell-integration">OS/shell integration</h3>
+<pre><code>ls
+files = !ls
+files
+files.s
+files.n
+files.p</code></pre>
+<p>Shell integration: <code>!</code></p>
+<pre><code>!pandoc
+#hello
+this is a simple document
+^d
+&lt;h1 id=&quot;hello&quot;&gt;hello&lt;/h1&gt;
+&lt;p&gt;this is a simple document&lt;/p&gt;</code></pre>
+<h3 id="qtconsole">QtConsole</h3>
+<pre><code>$ipython qtconsole</code></pre>
+<h3 id="notebook">Notebook</h3>
+<pre><code>$ipython notebook --pylab --ip=*</code></pre>
+<p>You can now connect from another machine on the network.</p>
+<figure>
+<img src="images/notebook-kbd.png" alt="Keyboard shortcuts" /><figcaption>Keyboard shortcuts</figcaption>
+</figure>
+<p>Demo of ipython notebook</p>
+<p>Loading some one else's notebook</p>
+<ul>
+<li>drag and drop the file on the web page</li>
+</ul>
+<h3 id="ipython-extensions"><a href="http://ipython.org/ipython-doc/2/config/extensions/index.html">iPython Extensions</a></h3>
+<p>Bundled:</p>
+<pre><code>autoreload
+cythonmagic
+octavemagic
+rmagic
+storemagic
+sympyprinting</code></pre>
+<p>Interesting:</p>
+<pre><code>sql</code></pre>
+<h4 id="ipython-sql"><code>ipython-sql</code></h4>
+<p><a href="https://pypi.python.org/pypi/ipython-sql">iPython-sql</a> Introduces a <code>%sql</code> (or <code>%%sql</code>) magic.</p>
+<p>Connect to a database, using SQLAlchemy connect strings, then issue SQL commands within IPython or IPython Notebook.</p>
+<pre><code>pip install ipython-sql
+pip install psycopg2
+%load_ext sql
+%%sql postgresql://pradeep:kishore@localhost/dvdrental
+select * from actor limit 10;</code></pre>
+<figure>
+<img src="images/sql.png" alt="SQL result" /><figcaption>SQL result</figcaption>
+</figure>
+<h3 id="display"><a href="http://goo.gl/ym1nBp">Display</a></h3>
+<pre><code>from IPython.display import Image
+Image(url=&#39;http://i.imgur.com/eF8kh6w.gif&#39;)</code></pre>
+<p>How is iPython notebook used?</p>
+<ul>
+<li>Visualization: <a href="http://nbviewer.ipython.org/gist/cparmer/7628933">http://nbviewer.ipython.org/gist/cparmer/7628933</a></li>
+<li>Graphics using Asymptote: <a href="http://goo.gl/IaU6Ov">http://goo.gl/IaU6Ov</a></li>
+<li>Using R from with iPython: <a href="http://goo.gl/or1kkR">http://goo.gl/or1kkR</a></li>
+<li>Haskell programming with iPython: <a href="http://gibiansky.github.io/IHaskell/demo.html">http://gibiansky.github.io/IHaskell/demo.html</a></li>
+<li>How about dynamic web viz? <a href="http://goo.gl/D5vHRS">http://goo.gl/D5vHRS</a></li>
+<li>Interactive web widgets: <a href="http://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/">http://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/</a></li>
+<li>Economics: <a href="http://nbviewer.ipython.org/url/norvig.com/ipython/Economics.ipynb">http://nbviewer.ipython.org/url/norvig.com/ipython/Economics.ipynb</a></li>
+<li>Teaching:
+<ul>
+<li><a href="http://www.kevinsheppard.com/Python_for_Econometrics">http://www.kevinsheppard.com/Python_for_Econometrics</a></li>
+<li><a href="http://www.kevinsheppard.com/Python_Course">http://www.kevinsheppard.com/Python_Course</a></li>
+</ul></li>
+<li><strong><a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">A gallery of interesting iPython notebooks</a></strong></li>
+</ul>
+<h2 id="windows">Windows</h2>
+<p>What if I live inside Visual studio?</p>
+<ul>
+<li>Python Tools for Visual Studio -- http://goo.gl/qJXQEp</li>
+</ul>
+
+
+</body>
+</html>

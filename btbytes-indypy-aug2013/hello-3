@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+#let's say we want optional arguments.
+
+import sys
+
+def show_help():
+    print '''Usage:
+    ./hello-2 kickalicious
+    '''
+
+
+if len(sys.argv) <2 :
+    show_help()
+    sys.exit(0)
+
+opt_argument = 50
+if len(sys.argv) >= 3:
+    opt_argument = sys.argv[2]
+
+print "%s, drop and give me %d. STAT!" % (sys.argv[1], opt_argument)
+
+# what if second arg is not an int?

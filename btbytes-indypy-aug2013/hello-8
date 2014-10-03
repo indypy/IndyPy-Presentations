@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import argparse
+
+parser = argparse.ArgumentParser(version='3.14', add_help=True)
+
+parser.add_argument('-a', action="store_true", default=False)
+parser.add_argument('-b', action="store", dest="b")
+parser.add_argument('-c', action="store", dest="c", type=int)
+
+print parser.parse_args()
