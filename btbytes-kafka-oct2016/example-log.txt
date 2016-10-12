@@ -1,0 +1,35 @@
+2016-10-11 15:01:02,119.119.673967361:kafka.conn:123145306509312:INFO:50964:Broker version identifed as 0.10
+2016-10-11 15:01:02,120.120.111942291:kafka.conn:123145306509312:INFO:50964:Set configuration api_version=(0, 10) to skip auto check_version requests on startup
+2016-10-11 15:01:02,124.124.566078186:kafka.conn:123145310715904:INFO:50964:Broker version identifed as 0.10
+2016-10-11 15:01:02,124.124.696969986:kafka.conn:123145310715904:INFO:50964:Set configuration api_version=(0, 10) to skip auto check_version requests on startup
+2016-10-11 15:01:02,125.125.818967819:kafka.consumer.subscription_state:123145310715904:INFO:50964:Updating subscribed topics to: ['my-topic']
+2016-10-11 15:01:03,238.238.786935806:kafka.cluster:123145310715904:INFO:50964:Group coordinator for kafka-python-default-group is BrokerMetadata(nodeId=2, host=u'10.55.70.79', port=9094, rack=None)
+2016-10-11 15:01:03,238.238.961935043:kafka.coordinator:123145310715904:INFO:50964:Discovered coordinator 2 for group kafka-python-default-group
+2016-10-11 15:01:03,239.239.857912064:kafka.coordinator.consumer:123145310715904:INFO:50964:Revoking previously assigned partitions set([]) for group kafka-python-default-group
+2016-10-11 15:01:03,239.239.998102188:kafka.coordinator:123145310715904:INFO:50964:(Re-)joining group kafka-python-default-group
+2016-10-11 15:01:03,268.268.878936768:kafka.coordinator:123145310715904:INFO:50964:Joined group 'kafka-python-default-group' (generation 1) with member_id kafka-python-1.3.1-7c363f81-9bd4-4c34-9d91-7cd7237dbd6c
+2016-10-11 15:01:03,269.269.08993721:kafka.coordinator:123145310715904:INFO:50964:Elected group leader -- performing partition assignments using range
+2016-10-11 15:01:03,403.403.913021088:kafka.coordinator:123145310715904:INFO:50964:Successfully joined group kafka-python-default-group with generation 1
+2016-10-11 15:01:03,404.404.237985611:kafka.consumer.subscription_state:123145310715904:INFO:50964:Updated partition assignment: [TopicPartition(topic=u'my-topic', partition=0)]
+2016-10-11 15:01:03,404.404.573917389:kafka.coordinator.consumer:123145310715904:INFO:50964:Setting newly assigned partitions set([TopicPartition(topic=u'my-topic', partition=0)]) for group kafka-python-default-group
+ConsumerRecord(topic=u'my-topic', partition=0, offset=0, timestamp=1476212462551, timestamp_type=0, key=None, value='test', checksum=-2116432621, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=1, timestamp=1476212462552, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-1888606121, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=2, timestamp=1476212463552, timestamp_type=0, key=None, value='test', checksum=1359078026, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=3, timestamp=1476212463552, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-1618549371, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=4, timestamp=1476212464554, timestamp_type=0, key=None, value='test', checksum=1331220447, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=5, timestamp=1476212464554, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=1252088244, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=6, timestamp=1476212465558, timestamp_type=0, key=None, value='test', checksum=-885582832, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=7, timestamp=1476212465558, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-1904765531, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=8, timestamp=1476212466561, timestamp_type=0, key=None, value='test', checksum=-2090835701, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=9, timestamp=1476212466561, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=1093372357, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=10, timestamp=1476212467565, timestamp_type=0, key=None, value='test', checksum=-1360025438, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=11, timestamp=1476212467565, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-1448514147, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=12, timestamp=1476212468570, timestamp_type=0, key=None, value='test', checksum=-32451848, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=13, timestamp=1476212468570, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-302159382, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=14, timestamp=1476212469571, timestamp_type=0, key=None, value='test', checksum=-735120943, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=15, timestamp=1476212469571, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=-365051656, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=16, timestamp=1476212470574, timestamp_type=0, key=None, value='test', checksum=-776542544, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=17, timestamp=1476212470575, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=1285136389, serialized_key_size=-1, serialized_value_size=13)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=18, timestamp=1476212471578, timestamp_type=0, key=None, value='test', checksum=266006034, serialized_key_size=-1, serialized_value_size=4)
+ConsumerRecord(topic=u'my-topic', partition=0, offset=19, timestamp=1476212471578, timestamp_type=0, key=None, value='\xc2Hola, mundo!', checksum=639905492, serialized_key_size=-1, serialized_value_size=13)
+2016-10-11 15:01:11,992.992.686986923:kafka.producer.kafka:140735178727424:INFO:50964:Closing the Kafka producer with 999999999 secs timeout.

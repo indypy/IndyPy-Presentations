@@ -15,3 +15,6 @@ popular technology stack for event processing.
 In this talk, I plan to detail the event processing problem, understand the core
 concepts behind Kafka, show off the primary tools associated with Kafka and
 given code examples in Python to push and consume data from Kafka.
+
+
+**[Slide deck](presentation.pdf)**
