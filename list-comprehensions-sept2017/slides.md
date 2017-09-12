@@ -6,22 +6,25 @@ footer: IndyPy September 2017 PBJ
 
 [.slidenumbers: false ]
 [.footer: ]
-![IndyPy](indypy_logo.png)
+![fit](indypy_logo.png)
 ### **IndyPy** September 2017 PBJ
 
 # [fit] List Comprehensions
 
 # :snake:
 
-### Calvin Hendryx-Parker
+#### Calvin Hendryx-Parker
 #### [Six Feet Up](http://www.sixfeetup.com)
 
 ---
 ![](https://c1.staticflickr.com/3/2475/3559426073_067a8f2665_b.jpg)
 
-# What is a List Comprehension
+# What is a
+# [fit] List Comprehension?
 
 ^ Converting one list (or any iterator) into a another list
+
+^ How do you normally convert from one list to another?  With a loop!
 
 ^ https://www.flickr.com/photos/martinko/3559426073/
 
@@ -125,9 +128,7 @@ shiny_new_list = [n * 2 for n in some_existing_list if conditionally_include(n)]
 
 ---
 
-### The Condition is Optional
-
-#### Our List Comprehension
+### Our List Comprehension
 
 ```python
 shiny_new_list = [n * 2 for n in some_existing_list if conditionally_include(n)]
@@ -139,7 +140,7 @@ shiny_new_list = [n * 2 for n in some_existing_list if conditionally_include(n)]
 shiny_new_list = [n * 2 for n in some_existing_list]
 ```
 
-#### If you didn't need the conditional
+#### If you don't need the conditional
 
 ---
 
@@ -169,6 +170,7 @@ for x in [1,2,3]:
 * Dictionary
 
 ---
+[.build-lists: true]
 
 # Set Comprehension
 
@@ -176,15 +178,20 @@ for x in [1,2,3]:
 a = {x for x in 'abracadabra' if x not in 'abc'}
 ```
 
+* `a = {'r', 'd'}`
+
 ---
+[.build-lists: true]
 
 # Dictionary Comprehension
 
 ## Similar, but has a colon, like a `dict`
 
 ```python
-{x: x**2 for x in (2, 4, 6)}
+b = {x: x**2 for x in (2, 4, 6)}
 ```
+
+* `b = {2: 4, 4: 16, 6: 36}`
 
 ---
 ![](https://c1.staticflickr.com/9/8670/16648403629_c2c30a4781_b.jpg)
