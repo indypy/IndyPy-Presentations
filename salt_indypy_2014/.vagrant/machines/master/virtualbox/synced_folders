@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/calvin/Documents/salt_indypy_2014","disabled":false},"/srv/salt":{"guestpath":"/srv/salt","hostpath":"/Users/calvin/Documents/salt_indypy_2014/salt/states","disabled":false}}}
