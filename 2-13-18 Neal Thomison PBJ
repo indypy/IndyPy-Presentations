@@ -1,0 +1,435 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Intro to the Python Data Model\n",
+    "# IndyPy Feb 2018\n",
+    "\n",
+    "## Neal Thomison\n",
+    "## Bangtree & Associates"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# The key to writing pythonic code is to read & understand The Python Language Reference - Section 3 \"Data Model\"."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "https://docs.python.org/3/reference/datamodel.html"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Yes: At first glance it looks intimidating, but a little effort will return handsome rewards."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%matplotlib inline\n",
+    "\n",
+    "import matplotlib\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "import random"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# A simple object to work with"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Region():\n",
+    "    \"\"\"A class to generate a number of random points on a specified interval.\n",
+    "\n",
+    "    Arguments:\n",
+    "    region -- a tuple specifying the high and low sampling bounds; inclusive\n",
+    "    cnt    -- number of points to generate\n",
+    "\n",
+    "    Points are selected randomly (uniform distribution) between interval bounds.\n",
+    "    \"\"\"\n",
+    "\n",
+    "    def __init__(self, region, cnt):\n",
+    "        \"\"\"How to build one.\"\"\"\n",
+    "        self._region = region\n",
+    "        self._cnt = cnt\n",
+    "        self._samples = []\n",
+    "        lo, hi = region\n",
+    "        for i in range(cnt):\n",
+    "            self._samples.append(random.uniform(lo, hi))\n",
+    "\n",
+    "    def __iter__(self):\n",
+    "        \"\"\"What to do for things like 'for ...'\"\"\"\n",
+    "        for s in self._samples:\n",
+    "            yield s\n",
+    "        return\n",
+    "\n",
+    "    def __str__(self):\n",
+    "        \"\"\"What to do when asked to display one\"\"\"\n",
+    "        rep = \"-- region --\\n\"\n",
+    "        rep += str(self._region) + \"\\n\"\n",
+    "        rep += \"-- samples --\\n\"\n",
+    "        rep += str(self._samples) + \"\\n\"\n",
+    "        rep += \"-- point count --\\n\"\n",
+    "        rep += str(self._cnt) + \"\\n\"\n",
+    "        return(rep)\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        \"\"\"What to do when 'len()' is called on one.\"\"\"\n",
+    "        return(self._cnt)\n",
+    "\n",
+    "    def __call__(self):\n",
+    "        \"\"\"What to do when: r = Region(..); r()\"\"\"\n",
+    "        return(self._samples)\n",
+    "\n",
+    "    def __getitem__(self, idx):\n",
+    "        \"\"\"What to do when: r = Region(..); r[idx]\"\"\"\n",
+    "        if ((idx < 0) or (idx >= self._cnt)):\n",
+    "            raise IndexError(\"Region: index out of bounds\")\n",
+    "        return(self._samples[idx])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Through the magic of the double underscore or _dunder_ methods we can specify what python should do (meaning; semantics) when it encounters certain common syntactical elements. I'll show what I mean by this.\n",
+    "# BTW, I've only defined a few and there are _lots_ of the 'dunder' methods available but time is short ... "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "help(Region)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Also, let's make a default object to see what the 'out of the box' behavior is."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Thing():\n",
+    "    pass"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Now, let's make a couple of these objects."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "t = Thing()\n",
+    "r = Region((0,2), 3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Now what? Let's try and print them."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(t)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(r)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# This is the '*\\_\\_str()\\_\\_*' method at work."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# It's up to a composite to object to specify it's length by defining the *\\_\\_len\\_\\_()* method; for some objects it makes no sense to do so. But _Region_ does define it, so ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "len(t)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "len(r)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Since _Region_ has a length it would seem to make sense to be able to iterate over it. Iteration is enabled by defining the *\\_\\_iter\\_\\_()* method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for p in r:\n",
+    "    print(p)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# _Region_ also specifies *\\_\\_getitem\\_\\_()*, we can index it."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r[4]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# BTW, sometimes you want to leverage indexing semantics (e.g., obj[idx]) for something that doesn't have anything to index."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class PowerTwo():\n",
+    "    def __getitem__(self, idx):\n",
+    "        return(2**idx)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p2 = PowerTwo()\n",
+    "print(p2[1], p2[3], p2[10], p2[16])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# But I digress ...\n",
+    "\n",
+    "# By specifying a *\\_\\_call\\_\\_()* method we can specify what it means to _call_ an instance."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Here we just return the samples list."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# OK. Fine. Nice. _So What?_"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Let's define a simple function to compute the mean. The *sum()* function expects its argument to be an *iterable*. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def mean(x):\n",
+    "    return sum(x)/len(x)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Let's try it out on a simple list of integers. *Lists* are iterable."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "l = [1, 2, 3]\n",
+    "mean(l)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## *Region* instances are iterable too because they have the *__iter__()* method. So *mean()* will also work for them."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "r = Region((0, 1), 400)\n",
+    "mean(r)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Turns out that expecting arguments to be iterable is very, very common. Here *plot()* has no idea of the composition of *Region* instances but things work just as we would expect."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "plt.plot(r)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# So an object that behaves reasonably allows you to leverage pretty much everything you love about Python without really knowing the details about the object.\n",
+    "\n",
+    "# That coupled with _jupyter notebooks_ gives you some very power tooling!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# The book _Fluent Python_ by Luciano Ramalho is _full_ of good stuff like this. But do yourself a favor: If you are new to this take some time wrestling with Section 3 first. You'll be prepping your mind to absorb the goodness found in _Fluent Python_"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "http://shop.oreilly.com/product/0636920032519.do"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
