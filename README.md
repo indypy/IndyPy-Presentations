@@ -1,4 +1,4 @@
-# Welcome, Indianapolis Pythoneers!
+# Welcome, Indiana Pythonistas!
 
 Meet other local Python Programming Language enthusiasts!
 
