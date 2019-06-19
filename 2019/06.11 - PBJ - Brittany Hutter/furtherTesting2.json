@@ -1,0 +1,149 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 98.59648132324219,
+            "Instances": [],
+            "Name": "Nature",
+            "Parents": []
+        },
+        {
+            "Confidence": 98.27854919433594,
+            "Instances": [],
+            "Name": "Outdoors",
+            "Parents": []
+        },
+        {
+            "Confidence": 95.42063903808594,
+            "Instances": [],
+            "Name": "Transportation",
+            "Parents": []
+        },
+        {
+            "Confidence": 95.42063903808594,
+            "Instances": [],
+            "Name": "Vehicle",
+            "Parents": [
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 95.42063903808594,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.258857399225235,
+                        "Left": 0.1300307959318161,
+                        "Top": 0.33652815222740173,
+                        "Width": 0.46301501989364624
+                    },
+                    "Confidence": 95.42063903808594
+                }
+            ],
+            "Name": "Truck",
+            "Parents": [
+                {
+                    "Name": "Transportation"
+                },
+                {
+                    "Name": "Vehicle"
+                }
+            ]
+        },
+        {
+            "Confidence": 95.02293395996094,
+            "Instances": [],
+            "Name": "Countryside",
+            "Parents": [
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                }
+            ]
+        },
+        {
+            "Confidence": 79.4404525756836,
+            "Instances": [],
+            "Name": "Straw",
+            "Parents": [
+                {
+                    "Name": "Countryside"
+                },
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                }
+            ]
+        },
+        {
+            "Confidence": 79.4404525756836,
+            "Instances": [],
+            "Name": "Hay",
+            "Parents": [
+                {
+                    "Name": "Countryside"
+                },
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                }
+            ]
+        },
+        {
+            "Confidence": 57.728492736816406,
+            "Instances": [],
+            "Name": "Rural",
+            "Parents": [
+                {
+                    "Name": "Countryside"
+                },
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                }
+            ]
+        },
+        {
+            "Confidence": 57.417789459228516,
+            "Instances": [],
+            "Name": "Tire",
+            "Parents": []
+        },
+        {
+            "Confidence": 55.41751480102539,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.32320261001586914,
+                        "Left": 0.10035538673400879,
+                        "Top": 0.29101893305778503,
+                        "Width": 0.5053991079330444
+                    },
+                    "Confidence": 55.41751480102539
+                }
+            ],
+            "Name": "Fire Truck",
+            "Parents": [
+                {
+                    "Name": "Transportation"
+                },
+                {
+                    "Name": "Truck"
+                },
+                {
+                    "Name": "Vehicle"
+                }
+            ]
+        }
+    ]
+}

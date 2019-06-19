@@ -1,0 +1,142 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 99.33643341064453,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.7268180251121521,
+                        "Left": 0.44143393635749817,
+                        "Top": 0.24980060756206512,
+                        "Width": 0.5583328604698181
+                    },
+                    "Confidence": 99.33643341064453
+                }
+            ],
+            "Name": "Person",
+            "Parents": []
+        },
+        {
+            "Confidence": 99.33643341064453,
+            "Instances": [],
+            "Name": "Human",
+            "Parents": []
+        },
+        {
+            "Confidence": 86.52766418457031,
+            "Instances": [],
+            "Name": "Machine",
+            "Parents": []
+        },
+        {
+            "Confidence": 82.40516662597656,
+            "Instances": [],
+            "Name": "Tire",
+            "Parents": []
+        },
+        {
+            "Confidence": 77.42912292480469,
+            "Instances": [],
+            "Name": "Vehicle",
+            "Parents": [
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 77.42912292480469,
+            "Instances": [],
+            "Name": "Transportation",
+            "Parents": []
+        },
+        {
+            "Confidence": 77.42912292480469,
+            "Instances": [],
+            "Name": "Aircraft",
+            "Parents": [
+                {
+                    "Name": "Vehicle"
+                },
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 77.42912292480469,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.9996488690376282,
+                        "Left": 0.0030516439583152533,
+                        "Top": 0,
+                        "Width": 0.9967151284217834
+                    },
+                    "Confidence": 77.42912292480469
+                }
+            ],
+            "Name": "Airplane",
+            "Parents": [
+                {
+                    "Name": "Aircraft"
+                },
+                {
+                    "Name": "Vehicle"
+                },
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 69.69373321533203,
+            "Instances": [],
+            "Name": "Clothing",
+            "Parents": []
+        },
+        {
+            "Confidence": 69.69373321533203,
+            "Instances": [],
+            "Name": "Apparel",
+            "Parents": []
+        },
+        {
+            "Confidence": 58.65046691894531,
+            "Instances": [],
+            "Name": "Wheel",
+            "Parents": [
+                {
+                    "Name": "Machine"
+                }
+            ]
+        },
+        {
+            "Confidence": 56.09794998168945,
+            "Instances": [],
+            "Name": "Spoke",
+            "Parents": [
+                {
+                    "Name": "Machine"
+                }
+            ]
+        },
+        {
+            "Confidence": 55.385337829589844,
+            "Instances": [],
+            "Name": "Car Wheel",
+            "Parents": [
+                {
+                    "Name": "Tire"
+                },
+                {
+                    "Name": "Wheel"
+                },
+                {
+                    "Name": "Machine"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 99.11149597167969,
+            "Instances": [],
+            "Name": "Apparel",
+            "Parents": []
+        },
+        {
+            "Confidence": 99.11149597167969,
+            "Instances": [],
+            "Name": "Clothing",
+            "Parents": []
+        },
+        {
+            "Confidence": 99.06734466552734,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.5158805251121521,
+                        "Left": 0.3265281617641449,
+                        "Top": 0.2826278805732727,
+                        "Width": 0.3496803343296051
+                    },
+                    "Confidence": 99.06734466552734
+                },
+                {
+                    "BoundingBox": {
+                        "Height": 0.6341333985328674,
+                        "Left": 0.5747929215431213,
+                        "Top": 0.31628984212875366,
+                        "Width": 0.41775333881378174
+                    },
+                    "Confidence": 91.23091125488281
+                },
+                {
+                    "BoundingBox": {
+                        "Height": 0.11619964987039566,
+                        "Left": 0.4099118113517761,
+                        "Top": 0.7182191014289856,
+                        "Width": 0.10697919130325317
+                    },
+                    "Confidence": 67.11235046386719
+                },
+                {
+                    "BoundingBox": {
+                        "Height": 0.12381330877542496,
+                        "Left": 0.3170035481452942,
+                        "Top": 0.7068586945533752,
+                        "Width": 0.10927242040634155
+                    },
+                    "Confidence": 64.74466705322266
+                }
+            ],
+            "Name": "Person",
+            "Parents": []
+        },
+        {
+            "Confidence": 99.06734466552734,
+            "Instances": [],
+            "Name": "Human",
+            "Parents": []
+        },
+        {
+            "Confidence": 90.33918762207031,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.09211838245391846,
+                        "Left": 0.45869219303131104,
+                        "Top": 0.2825563848018646,
+                        "Width": 0.12808144092559814
+                    },
+                    "Confidence": 74.7622299194336
+                }
+            ],
+            "Name": "Helmet",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        },
+        {
+            "Confidence": 86.5093994140625,
+            "Instances": [],
+            "Name": "Hardhat",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                },
+                {
+                    "Name": "Helmet"
+                }
+            ]
+        },
+        {
+            "Confidence": 78.67173767089844,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.5192610621452332,
+                        "Left": 0,
+                        "Top": 0.44052863121032715,
+                        "Width": 0.4428238570690155
+                    },
+                    "Confidence": 78.67173767089844
+                }
+            ],
+            "Name": "Fire Hydrant",
+            "Parents": [
+                {
+                    "Name": "Hydrant"
+                }
+            ]
+        },
+        {
+            "Confidence": 78.67173767089844,
+            "Instances": [],
+            "Name": "Hydrant",
+            "Parents": []
+        },
+        {
+            "Confidence": 76.744384765625,
+            "Instances": [],
+            "Name": "Building",
+            "Parents": []
+        },
+        {
+            "Confidence": 76.744384765625,
+            "Instances": [],
+            "Name": "Architecture",
+            "Parents": [
+                {
+                    "Name": "Building"
+                }
+            ]
+        },
+        {
+            "Confidence": 73.4977798461914,
+            "Instances": [],
+            "Name": "Construction",
+            "Parents": []
+        },
+        {
+            "Confidence": 71.70640563964844,
+            "Instances": [],
+            "Name": "Worker",
+            "Parents": [
+                {
+                    "Name": "Person"
+                }
+            ]
+        },
+        {
+            "Confidence": 66.3469467163086,
+            "Instances": [],
+            "Name": "Pants",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        },
+        {
+            "Confidence": 62.37637710571289,
+            "Instances": [],
+            "Name": "Hat",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        },
+        {
+            "Confidence": 56.8524055480957,
+            "Instances": [],
+            "Name": "Column",
+            "Parents": [
+                {
+                    "Name": "Architecture"
+                },
+                {
+                    "Name": "Building"
+                }
+            ]
+        },
+        {
+            "Confidence": 56.8524055480957,
+            "Instances": [],
+            "Name": "Pillar",
+            "Parents": [
+                {
+                    "Name": "Architecture"
+                },
+                {
+                    "Name": "Building"
+                }
+            ]
+        },
+        {
+            "Confidence": 55.283206939697266,
+            "Instances": [],
+            "Name": "Jeans",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                },
+                {
+                    "Name": "Pants"
+                }
+            ]
+        },
+        {
+            "Confidence": 55.283206939697266,
+            "Instances": [],
+            "Name": "Denim",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                },
+                {
+                    "Name": "Pants"
+                }
+            ]
+        }
+    ]
+}

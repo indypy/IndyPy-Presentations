@@ -1,0 +1,143 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 97.3594741821289,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.5814687013626099,
+                        "Left": 0.05900261551141739,
+                        "Top": 0.36189547181129456,
+                        "Width": 0.8923995494842529
+                    },
+                    "Confidence": 97.08660125732422
+                }
+            ],
+            "Name": "Truck",
+            "Parents": [
+                {
+                    "Name": "Vehicle"
+                },
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 97.3594741821289,
+            "Instances": [],
+            "Name": "Vehicle",
+            "Parents": [
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 97.3594741821289,
+            "Instances": [],
+            "Name": "Transportation",
+            "Parents": []
+        },
+        {
+            "Confidence": 94.36235809326172,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.6309870481491089,
+                        "Left": 0.02126537635922432,
+                        "Top": 0.3257027566432953,
+                        "Width": 0.9628244638442993
+                    },
+                    "Confidence": 53.46753692626953
+                }
+            ],
+            "Name": "Fire Truck",
+            "Parents": [
+                {
+                    "Name": "Truck"
+                },
+                {
+                    "Name": "Vehicle"
+                },
+                {
+                    "Name": "Transportation"
+                }
+            ]
+        },
+        {
+            "Confidence": 80.564453125,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.19179970026016235,
+                        "Left": 0.7210533618927002,
+                        "Top": 0.7198857665061951,
+                        "Width": 0.13975009322166443
+                    },
+                    "Confidence": 80.564453125
+                }
+            ],
+            "Name": "Wheel",
+            "Parents": [
+                {
+                    "Name": "Machine"
+                }
+            ]
+        },
+        {
+            "Confidence": 80.564453125,
+            "Instances": [],
+            "Name": "Machine",
+            "Parents": []
+        },
+        {
+            "Confidence": 66.31424713134766,
+            "Instances": [],
+            "Name": "Outdoors",
+            "Parents": []
+        },
+        {
+            "Confidence": 66.31424713134766,
+            "Instances": [],
+            "Name": "Countryside",
+            "Parents": [
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                }
+            ]
+        },
+        {
+            "Confidence": 66.31424713134766,
+            "Instances": [],
+            "Name": "Nature",
+            "Parents": []
+        },
+        {
+            "Confidence": 60.081016540527344,
+            "Instances": [],
+            "Name": "Rural",
+            "Parents": [
+                {
+                    "Name": "Outdoors"
+                },
+                {
+                    "Name": "Nature"
+                },
+                {
+                    "Name": "Countryside"
+                }
+            ]
+        },
+        {
+            "Confidence": 55.19184112548828,
+            "Instances": [],
+            "Name": "Tire",
+            "Parents": []
+        }
+    ]
+}

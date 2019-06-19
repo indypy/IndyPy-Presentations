@@ -1,0 +1,132 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 99.89617919921875,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.652601957321167,
+                        "Left": 0.05871826037764549,
+                        "Top": 0.3455645740032196,
+                        "Width": 0.1827416867017746
+                    },
+                    "Confidence": 99.89617919921875
+                },
+                {
+                    "BoundingBox": {
+                        "Height": 0.6392713785171509,
+                        "Left": 0.14759476482868195,
+                        "Top": 0.3563430607318878,
+                        "Width": 0.20471659302711487
+                    },
+                    "Confidence": 99.77684020996094
+                }
+            ],
+            "Name": "Person",
+            "Parents": []
+        },
+        {
+            "Confidence": 99.89617919921875,
+            "Instances": [],
+            "Name": "Human",
+            "Parents": []
+        },
+        {
+            "Confidence": 98.80177307128906,
+            "Instances": [],
+            "Name": "Apparel",
+            "Parents": []
+        },
+        {
+            "Confidence": 98.80177307128906,
+            "Instances": [],
+            "Name": "Clothing",
+            "Parents": []
+        },
+        {
+            "Confidence": 98.80177307128906,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.10586116462945938,
+                        "Left": 0.22862602770328522,
+                        "Top": 0.36476901173591614,
+                        "Width": 0.10601339489221573
+                    },
+                    "Confidence": 98.80177307128906
+                },
+                {
+                    "BoundingBox": {
+                        "Height": 0.12347172945737839,
+                        "Left": 0.14198462665081024,
+                        "Top": 0.34357666969299316,
+                        "Width": 0.09780285507440567
+                    },
+                    "Confidence": 95.2130126953125
+                }
+            ],
+            "Name": "Helmet",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        },
+        {
+            "Confidence": 82.92765045166016,
+            "Instances": [],
+            "Name": "Hardhat",
+            "Parents": [
+                {
+                    "Name": "Helmet"
+                },
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        },
+        {
+            "Confidence": 71.25498962402344,
+            "Instances": [
+                {
+                    "BoundingBox": {
+                        "Height": 0.8548418283462524,
+                        "Left": 0,
+                        "Top": 0.07950277626514435,
+                        "Width": 0.8964637517929077
+                    },
+                    "Confidence": 71.25498962402344
+                }
+            ],
+            "Name": "Utility Pole",
+            "Parents": []
+        },
+        {
+            "Confidence": 59.28776168823242,
+            "Instances": [],
+            "Name": "Construction",
+            "Parents": []
+        },
+        {
+            "Confidence": 57.148040771484375,
+            "Instances": [],
+            "Name": "Worker",
+            "Parents": [
+                {
+                    "Name": "Person"
+                }
+            ]
+        },
+        {
+            "Confidence": 56.836669921875,
+            "Instances": [],
+            "Name": "Pants",
+            "Parents": [
+                {
+                    "Name": "Clothing"
+                }
+            ]
+        }
+    ]
+}

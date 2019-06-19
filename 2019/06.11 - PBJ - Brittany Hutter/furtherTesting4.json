@@ -1,0 +1,17 @@
+{
+    "LabelModelVersion": "2.0",
+    "Labels": [
+        {
+            "Confidence": 90.9214859008789,
+            "Instances": [],
+            "Name": "Oilfield",
+            "Parents": []
+        },
+        {
+            "Confidence": 62.3958740234375,
+            "Instances": [],
+            "Name": "Outdoors",
+            "Parents": []
+        }
+    ]
+}
